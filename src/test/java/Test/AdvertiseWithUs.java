@@ -57,7 +57,7 @@ public class AdvertiseWithUs extends BaseTest {
 			log.info("✅ Sell - Residential ad flow completed.");
 		} catch (Exception e) {
 			log.error("❌ Sell - Residential ad flow failed.", e);
-			throw new RuntimeException(e);
+			throw new RuntimeException(e); 
 		}
 	}
 
