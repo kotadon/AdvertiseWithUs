@@ -23,18 +23,19 @@ public class GenerateReport {
     }
 
     public static ExtentReports createInstance(String fileName) {
-    	reportPath = fileName;
-        ExtentSparkReporter sparkReporter = new ExtentSparkReporter(fileName);
-        sparkReporter.config().setReportName("B2C Bricks Sanity Test Report");
-        sparkReporter.config().setDocumentTitle("AdvertiseWithUs B2C Automation");
-        sparkReporter.config().setEncoding("utf-8");
-        sparkReporter.config().setTheme(Theme.DARK);
+        if (extent == null) {
+            ExtentSparkReporter sparkReporter = new ExtentSparkReporter(fileName);
+            sparkReporter.config().setTimelineEnabled(true);
+            sparkReporter.config().setReportName("B2C Bricks Sanity Test Report");
+            sparkReporter.config().setDocumentTitle("AdvertiseWithUs B2C Automation");
+            sparkReporter.config().setEncoding("utf-8");
+            sparkReporter.config().setTheme(Theme.DARK);
 
-        extent = new ExtentReports();
-        extent.attachReporter(sparkReporter);
-        extent.setSystemInfo("QA Engineer", "Deepak Kumar");
-        extent.setSystemInfo("QC Environment", "MB Production");
-
+            extent = new ExtentReports();	
+            extent.attachReporter(sparkReporter);
+            extent.setSystemInfo("QA Engineer", "Deepak Kumar");
+            extent.setSystemInfo("QC Environment", "MB Production");
+        }
         return extent;
     }
 

@@ -12,6 +12,8 @@ import java.util.Properties;
 import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -20,11 +22,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
-
+	
+	private static final Logger log = LogManager.getLogger(BaseTest.class);
     public static WebDriver driver;
     public WebDriverWait wait;
     public static Properties config;
@@ -33,16 +35,22 @@ public class BaseTest {
     public void setup() throws Exception {
         WebDriverManager.chromedriver().setup();
         loadConfig();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications");
-        driver.get(config.getProperty("url"));
+        
+        driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
+        log.info("✅ Browser launched and maximized");
+
+        String url = config.getProperty("url");
+        log.info("Navigating to URL: {}", url);
+        driver.get(url);
     }
 
-    public void ScrollToElement(WebElement String) {
+    public void ScrollToElement(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", String);
+        js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", element);
+        log.info("Scrolled to element: {}", element);
     }
     
 
@@ -50,11 +58,13 @@ public class BaseTest {
         Set<String> windowHandles = driver.getWindowHandles();
         List<String> windowList = new ArrayList<>(windowHandles);
         driver.switchTo().window(windowList.get(windowList.size() - 1));
+        log.info("Switched to new browser tab");
     }
 
     public void ReloadPage()
     {
         driver.navigate().refresh();
+        log.info("Page reloaded");
 
     }
     
@@ -63,6 +73,7 @@ public class BaseTest {
         config = new Properties();
         config.load(file);
         file.close();
+        log.info("✅ Config file loaded");
     }
     
     
@@ -71,25 +82,28 @@ public class BaseTest {
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String filePath = "C:\\Users\\Deepak.Kumar\\eclipse-workspace\\Bricks\\screenshots\\" + testName + "_" + timestamp + ".png";
-        FileUtils.copyFile(screenshot, new File(filePath));
-        System.out.println("📸 Screenshot saved: " + filePath);
         File destination = new File(filePath);
         FileUtils.copyFile(screenshot, destination);
+        System.out.println("📸 Screenshot saved: " + filePath);
         return filePath;
+        
+    	} catch (IOException e) {
+    		 log.error("❌ Failed to take screenshot: {}", e.getMessage(), e);
+            throw e;  // Let the caller handle it
         } catch (Exception e) {
-       	 System.out.printf("❌ Failed to take screenshot.", e);
-    }
-		return testName;
+        	log.error("❌ Unexpected error during screenshot: {}", e.getMessage(), e);
+        }
 
+        return null;  // Return null if something failed
     }
     public void writeResultToExcel(String testName, String status) {
         String filePath = "C:\\Users\\Deepak.Kumar\\Documents\\Testresults.csv";
         try (FileWriter writer = new FileWriter(filePath, true)) {
             writer.append(testName).append(",").append(status).append("\n");
             writer.flush();
-            System.out.println("📄 Test result saved: " + testName + " - " + status);
+            log.info("📄 Test result saved: {} - {}", testName, status);
         } catch (IOException e) {
-            e.printStackTrace();
+        	log.error("❌ Error writing result to CSV: {}", e.getMessage(), e);
         }
     }
     

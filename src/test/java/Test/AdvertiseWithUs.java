@@ -31,13 +31,19 @@ public class AdvertiseWithUs extends BaseTest {
 
 	@BeforeClass
 	public void setUpBrowser() throws Exception {
-		setup();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-		wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-		initializePages();
-		login();
-		log.info("✅ Browser setup completed and pages initialized.");
-	}
+		 try {
+			 	log.info("✅ Browser setup Started.");
+		        setup();
+		        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+		        initializePages();
+		        login();
+		        log.info("✅ Browser setup completed and pages initialized.");
+		    } catch (Exception e) {
+		        log.error("❌ Error during setup: {}", e.getMessage());
+		        throw e;
+		    }
+		}
 
 	@BeforeMethod
 	private void initializePages() {
@@ -50,7 +56,7 @@ public class AdvertiseWithUs extends BaseTest {
 		log.info("✅ All page objects initialized.");
 	}
 
-	@Test(priority = 1)
+	@Test(priority = 1, description="Verified- Sell Residential B2C end-to-end Flow and SendRequest Flow") 
 	public void testSellResidentialAdFlow() {
 		try {
 			executeAdAndPayment("Sell", "Residential");
@@ -61,18 +67,19 @@ public class AdvertiseWithUs extends BaseTest {
 		}
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 2, description="Verified- Sell Commercial B2C end-to-end Flow and SendRequest Flow")
 	public void testSellCommercialAdFlow() {
 		try {
 			executeAdAndPayment1("Sell", "Commercial");
 			log.info("✅ Sell - Commercial ad flow completed.");
+			 
 		} catch (Exception e) {
 			log.error("❌ Sell - Commercial ad flow failed.", e);
 			throw new RuntimeException(e);
 		}
 	}
 
-	@Test(priority = 3)
+	@Test(priority = 3, description="Verified- Rent Residential B2C end-to-end Flow and SendRequest Flow")
 	public void testRentResidentialAdFlow() {
 		try {
 			executeAdAndPayment1("Rent", "Residential");
@@ -83,7 +90,7 @@ public class AdvertiseWithUs extends BaseTest {
 		}
 	}
 
-	@Test(priority = 4)
+	@Test(priority = 4, description="Verified- Rent Commercial B2C end-to-end Flow and SendRequest Flow")
 	public void testRentCommercialAdFlow() {
 		try {
 			executeAdAndPayment1("Rent", "Commercial");
@@ -107,13 +114,17 @@ public class AdvertiseWithUs extends BaseTest {
 
 	@AfterTest
 	public void teardown() {
-		if (driver != null) {
-			driver.quit();
-			log.info("✅ Browser closed successfully.");
-		}
+	    try {
+	        if (driver != null) {
+	            driver.quit();
+	            log.info("✅ Browser closed successfully.");
+	        }
+	    } catch (Exception e) {
+	        log.error("❌ Error while closing the browser: " + e.getMessage());
+	    }
 	}
 
-	private void executeAdAndPayment(String type, String category) throws InterruptedException {
+	private void executeAdAndPayment(String type, String category) {
 		log.info("🚀 Executing {} - {} ad flow...", type, category);
 		reachMbHome.closeGrid();
 		reachMbHome.clickMb();
@@ -127,7 +138,7 @@ public class AdvertiseWithUs extends BaseTest {
 		processPaymentFlow();
 	}
 
-	private void executeAdAndPayment1(String type, String category) throws InterruptedException {
+	private void executeAdAndPayment1(String type, String category)  {
 		log.info("🚀 Executing {} - {} ad flow...", type, category);
 		reachMbHome.clickSellTab();
 		reachMbHome.clickAdPackage();
@@ -169,7 +180,7 @@ public class AdvertiseWithUs extends BaseTest {
 		log.info("✅ Request callback submitted successfully.");
 	}
 
-	private void selectPackage(String type, String category) throws InterruptedException {
+	private void selectPackage(String type, String category) {
 		log.info("🚀 Selecting {} package for {} category", type, category);
 
 		if (type.equalsIgnoreCase("Sell") && category.equalsIgnoreCase("Residential")) {

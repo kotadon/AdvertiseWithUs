@@ -6,11 +6,8 @@
       <class name="Test.AdvertiseWithUs">
         <methods>
           <include name="testRentResidentialAdFlow"/>
-          <include name="testRentCommercialAdFlow"/>
-          <include name="testSellCommercialAdFlow"/>
-          <include name="testSellResidentialAdFlow"/>
-          <include name="teardown"/>
           <include name="initializePages"/>
+          <include name="teardown"/>
           <include name="setUpBrowser"/>
         </methods>
       </class> <!-- Test.AdvertiseWithUs -->

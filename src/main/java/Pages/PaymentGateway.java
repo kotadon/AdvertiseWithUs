@@ -80,6 +80,7 @@ public class PaymentGateway extends BaseTest {
 		System.out.println("Gateway Message: "+ process.getText());
 	}
 	public void tryAgain() {
+		System.out.println("We are trying again for the Payment");
 		wait.until(ExpectedConditions.elementToBeClickable(tAgain)).click();
 	}
 	public void reachMbHome() {

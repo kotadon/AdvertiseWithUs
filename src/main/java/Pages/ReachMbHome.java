@@ -30,6 +30,10 @@ public class ReachMbHome extends BaseTest {
 		private WebElement sellTab;
 		@FindBy(xpath="((//a[@href='https://www.magicbricks.com/advertise-with-us'])[1])")
 		private WebElement adPackage;
+		@FindBy(xpath="((//span[@class='myreq__reqcard__btmsec__denybtn__icon'])")
+		private WebElement skipPendingCard;
+		@FindBy(xpath="//a[text()='My Properties']")
+		private WebElement properties;
 	
 		
 		
@@ -45,7 +49,7 @@ public class ReachMbHome extends BaseTest {
 	        try {
 	            if (grid.isDisplayed()) {
 	                grid.click();
-	            } else {
+	            } else  {
 	                skipIapprove.click();	
 	            }
 	        } catch (NoSuchElementException e) {
@@ -58,6 +62,17 @@ public class ReachMbHome extends BaseTest {
 	        try {
 	            if (grid1.isDisplayed()) {
 	                grid1.click();
+	            }
+	        } catch (NoSuchElementException e) {
+	            System.out.println("Grid1 element not found, skipping.");
+	            
+	            
+	        }
+	    }
+	    public void closeGrid2() {
+	        try {
+	            if (skipPendingCard.isDisplayed()) {
+	            	skipPendingCard.click();
 	            }
 	        } catch (NoSuchElementException e) {
 	            System.out.println("Grid1 element not found, skipping.");

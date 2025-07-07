@@ -23,7 +23,7 @@ public class SendReport {
 
     public static void sendEmailWithReport(String toEmail, String filePath) {
         final String fromEmail = "deepak.kumar1@magicbricks.com";
-        final String password = "oigf xrfs gxtn wsoo"; // App-specific password
+        final String password = "afdo mknf laax skjx"; // App-specific password
 
         String timeStamp = new SimpleDateFormat("dd-MMM-yyyy HH:mm").format(new Date());
         String subject = "AdPackages_B2C Automation Test Report – " + timeStamp;

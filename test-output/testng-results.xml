@@ -2,48 +2,48 @@
 <testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-05-01T17:09:51 IST" name="Default suite" finished-at="2025-05-01T17:13:29 IST" duration-ms="217747">
+  <suite started-at="2025-06-06T16:24:14 IST" name="Default suite" finished-at="2025-06-06T16:27:20 IST" duration-ms="186140">
     <groups>
     </groups>
-    <test started-at="2025-05-01T17:09:51 IST" name="Default test" finished-at="2025-05-01T17:13:29 IST" duration-ms="217747">
+    <test started-at="2025-06-06T16:24:14 IST" name="Default test" finished-at="2025-06-06T16:27:20 IST" duration-ms="186140">
       <class name="Test.AdvertiseWithUs">
-        <test-method is-config="true" signature="setUpBrowser()[pri:0, instance:Test.AdvertiseWithUs@6b8ca3c8]" started-at="2025-05-01T17:09:51 IST" name="setUpBrowser" finished-at="2025-05-01T17:10:25 IST" duration-ms="34299" status="PASS">
+        <test-method is-config="true" signature="setUpBrowser()[pri:0, instance:Test.AdvertiseWithUs@1af146]" started-at="2025-06-06T16:24:14 IST" name="setUpBrowser" finished-at="2025-06-06T16:24:44 IST" duration-ms="29754" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBrowser -->
-        <test-method is-config="true" signature="initializePages()[pri:0, instance:Test.AdvertiseWithUs@6b8ca3c8]" started-at="2025-05-01T17:10:25 IST" name="initializePages" finished-at="2025-05-01T17:10:25 IST" duration-ms="51" status="PASS">
+        <test-method is-config="true" signature="initializePages()[pri:0, instance:Test.AdvertiseWithUs@1af146]" started-at="2025-06-06T16:24:44 IST" name="initializePages" finished-at="2025-06-06T16:24:44 IST" duration-ms="29" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializePages -->
-        <test-method signature="testSellResidentialAdFlow()[pri:1, instance:Test.AdvertiseWithUs@6b8ca3c8]" started-at="2025-05-01T17:10:25 IST" name="testSellResidentialAdFlow" finished-at="2025-05-01T17:11:22 IST" duration-ms="56234" status="PASS">
+        <test-method signature="testSellResidentialAdFlow()[pri:1, instance:Test.AdvertiseWithUs@1af146]" started-at="2025-06-06T16:24:44 IST" name="testSellResidentialAdFlow" description="Verified- Sell Residential B2C end-to-end Flow and SendRequest Flow" finished-at="2025-06-06T16:25:25 IST" duration-ms="41005" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSellResidentialAdFlow -->
-        <test-method is-config="true" signature="initializePages()[pri:0, instance:Test.AdvertiseWithUs@6b8ca3c8]" started-at="2025-05-01T17:11:22 IST" name="initializePages" finished-at="2025-05-01T17:11:22 IST" duration-ms="9" status="PASS">
+        <test-method is-config="true" signature="initializePages()[pri:0, instance:Test.AdvertiseWithUs@1af146]" started-at="2025-06-06T16:25:26 IST" name="initializePages" finished-at="2025-06-06T16:25:26 IST" duration-ms="7" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializePages -->
-        <test-method signature="testSellCommercialAdFlow()[pri:2, instance:Test.AdvertiseWithUs@6b8ca3c8]" started-at="2025-05-01T17:11:22 IST" name="testSellCommercialAdFlow" finished-at="2025-05-01T17:12:06 IST" duration-ms="44382" status="PASS">
+        <test-method signature="testSellCommercialAdFlow()[pri:2, instance:Test.AdvertiseWithUs@1af146]" started-at="2025-06-06T16:25:26 IST" name="testSellCommercialAdFlow" description="Verified- Sell Commercial B2C end-to-end Flow and SendRequest Flow" finished-at="2025-06-06T16:26:03 IST" duration-ms="37617" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSellCommercialAdFlow -->
-        <test-method is-config="true" signature="initializePages()[pri:0, instance:Test.AdvertiseWithUs@6b8ca3c8]" started-at="2025-05-01T17:12:06 IST" name="initializePages" finished-at="2025-05-01T17:12:06 IST" duration-ms="5" status="PASS">
+        <test-method is-config="true" signature="initializePages()[pri:0, instance:Test.AdvertiseWithUs@1af146]" started-at="2025-06-06T16:26:04 IST" name="initializePages" finished-at="2025-06-06T16:26:04 IST" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializePages -->
-        <test-method signature="testRentResidentialAdFlow()[pri:3, instance:Test.AdvertiseWithUs@6b8ca3c8]" started-at="2025-05-01T17:12:06 IST" name="testRentResidentialAdFlow" finished-at="2025-05-01T17:12:50 IST" duration-ms="43404" status="PASS">
+        <test-method signature="testRentResidentialAdFlow()[pri:3, instance:Test.AdvertiseWithUs@1af146]" started-at="2025-06-06T16:26:04 IST" name="testRentResidentialAdFlow" description="Verified- Rent Residential B2C end-to-end Flow and SendRequest Flow" finished-at="2025-06-06T16:26:39 IST" duration-ms="35479" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testRentResidentialAdFlow -->
-        <test-method is-config="true" signature="initializePages()[pri:0, instance:Test.AdvertiseWithUs@6b8ca3c8]" started-at="2025-05-01T17:12:50 IST" name="initializePages" finished-at="2025-05-01T17:12:50 IST" duration-ms="9" status="PASS">
+        <test-method is-config="true" signature="initializePages()[pri:0, instance:Test.AdvertiseWithUs@1af146]" started-at="2025-06-06T16:26:40 IST" name="initializePages" finished-at="2025-06-06T16:26:40 IST" duration-ms="6" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializePages -->
-        <test-method signature="testRentCommercialAdFlow()[pri:4, instance:Test.AdvertiseWithUs@6b8ca3c8]" started-at="2025-05-01T17:12:50 IST" name="testRentCommercialAdFlow" finished-at="2025-05-01T17:13:27 IST" duration-ms="37369" status="PASS">
+        <test-method signature="testRentCommercialAdFlow()[pri:4, instance:Test.AdvertiseWithUs@1af146]" started-at="2025-06-06T16:26:40 IST" name="testRentCommercialAdFlow" description="Verified- Rent Commercial B2C end-to-end Flow and SendRequest Flow" finished-at="2025-06-06T16:27:16 IST" duration-ms="35831" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testRentCommercialAdFlow -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:Test.AdvertiseWithUs@6b8ca3c8]" started-at="2025-05-01T17:13:27 IST" name="teardown" finished-at="2025-05-01T17:13:29 IST" duration-ms="1611" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:Test.AdvertiseWithUs@1af146]" started-at="2025-06-06T16:27:17 IST" name="teardown" finished-at="2025-06-06T16:27:20 IST" duration-ms="3152" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

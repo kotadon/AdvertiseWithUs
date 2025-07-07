@@ -97,8 +97,8 @@ public class MorePackages extends BaseTest {
         
 		String actualResult = pg.getText();
 		String actualResult1 = pgPrice.getText();
-        String expectedResult = "Whenever you want to fill a vacancy in your PG, simply reactivate your old listing.";
-        String expectedResult1 = "₹ 13499";
+        String expectedResult = config.getProperty("pg.description");
+        String expectedResult1 = config.getProperty("pg.price");
         Assert.assertEquals(actualResult, expectedResult, "Test Failed! PG Package is not found");
         System.out.println("✅ PG package is Found");
         Assert.assertEquals(actualResult1, expectedResult1, "Test Failed! PG Package Price is not Matching");
@@ -106,8 +106,8 @@ public class MorePackages extends BaseTest {
         
         String actualResult2 = luxury.getText();
 		String actualResult3 = luxuryPrice.getText();
-        String expectedResult2 = "Get free refresh for your luxury property daily along with a professional photo-shoot";
-        String expectedResult3 = "₹ 4,725";
+        String expectedResult2 = config.getProperty("luxury.description");
+        String expectedResult3 = config.getProperty("luxury.price");
         Assert.assertEquals(actualResult2, expectedResult2, "Test Failed! Luxury Listing Package is not found");
         System.out.println("✅ Luxury Listing package is Found");
         Assert.assertEquals(actualResult3, expectedResult3, "Test Failed! Luxury Listing Package Price is not Matching");
@@ -115,8 +115,8 @@ public class MorePackages extends BaseTest {
         
         String actualResult4 = silver.getText();
 		String actualResult5 = silverPrice.getText();
-		String expectedResult4 = "Get maximum responses with customized Emails sent to relevant buyers along with a Silver Package.";
-        String expectedResult5 = "₹ 8,878";
+		String expectedResult4 = config.getProperty("silver.discription");
+        String expectedResult5 = config.getProperty("silver.price");
         Assert.assertEquals(actualResult4, expectedResult4, "Test Failed! Silver Mailer Combo Package is not found");
         System.out.println("✅ Silver Mailer Combo package is Found");
         Assert.assertEquals(actualResult5, expectedResult5, "Test Failed! Silver Mailer Combo Package Price is not Matching");
@@ -136,8 +136,8 @@ public class MorePackages extends BaseTest {
 		 wait.until(ExpectedConditions.visibilityOf(insta));
 			String actualResult = insta.getText();
 			String actualResult1 = instaPrice.getText();
-	        String expectedResult = "Get an \"Urgent Sale\" tag for your property, ensure maximum exposure & sell in the shortest possible time.";
-	        String expectedResult1 = "₹ 27,500";
+	        String expectedResult = config.getProperty("insta.discription");
+	        String expectedResult1 = config.getProperty("insta.price");
 	        Assert.assertEquals(actualResult, expectedResult, "Test Failed! Insta Package is not found");
 	        System.out.println("✅ Insta package is Found");
 	        Assert.assertEquals(actualResult1, expectedResult1, "Test Failed! Insta Package Price is not Matching");
@@ -145,8 +145,8 @@ public class MorePackages extends BaseTest {
 	        
 	        String actualResult2 = longTerm.getText();
 			String actualResult3 = longPrice.getText();
-	        String expectedResult2 = "Free Refresh for your property every month for 1 year along with a professional photo-shoot";
-	        String expectedResult3 = "₹ 7,852";
+	        String expectedResult2 = config.getProperty("long.discription");
+	        String expectedResult3 = config.getProperty("long.price");
 	        Assert.assertEquals(actualResult2, expectedResult2, "Test Failed! Long Term Sale Listing Package is not found");
 	        System.out.println("✅ Long Term Sale Listing package is Found");
 	        Assert.assertEquals(actualResult3, expectedResult3, "Test Failed! Long Term Sale Listing Package Price is not Matching");
@@ -154,8 +154,8 @@ public class MorePackages extends BaseTest {
 	         
 	        String actualResult4 = online.getText();
 			String actualResult5 = onlinePrice.getText();
-	        String expectedResult4 = "Book a classified ad in Times Property (Times of India) of your city to reach out to maximum buyers.";
-	        String expectedResult5 = "₹ 7,200";
+	        String expectedResult4 = config.getProperty("online.discription");
+	        String expectedResult5 = config.getProperty("online.price");
 	        Assert.assertEquals(actualResult4, expectedResult4, "Test Failed! Online-Offline Ad Combo Package is not found");
 	        System.out.println("✅ Online-Offline Ad Combo package is Found");
 	        Assert.assertEquals(actualResult5, expectedResult5, "Test Failed! Online-Offline Ad Combo Package Price is not Matching");
@@ -166,8 +166,8 @@ public class MorePackages extends BaseTest {
 		 wait.until(ExpectedConditions.visibilityOf(instaSell));
 			String actualResult = instaSell.getText();
 			String actualResult1 = instaSellPrice.getText();
-	        String expectedResult = "Get an \"Urgent Sale\" tag for your property, ensure maximum exposure & sell in the shortest possible time.";
-	        String expectedResult1 = "₹ 27,500";
+	        String expectedResult = config.getProperty("insta.discription");
+	        String expectedResult1 =  config.getProperty("insta.price");
 	        Assert.assertEquals(actualResult, expectedResult, "Test Failed! Insta Sell Package is not found");
 	        System.out.println("✅ Insta Sell package is Found");
 	        Assert.assertEquals(actualResult1, expectedResult1, "Test Failed! Insta Sell Package Price is not Matching");
@@ -175,8 +175,8 @@ public class MorePackages extends BaseTest {
 	        
 	        String actualResult2 = longSell.getText();
 			String actualResult3 = longSellPrice.getText();
-	        String expectedResult2 = "Free Refresh for your property every month for 1 year along with a professional photo-shoot";
-	        String expectedResult3 = "₹ 6544";
+	        String expectedResult2 = config.getProperty("longsell.discription");
+	        String expectedResult3 = config.getProperty("longsell.price");
 	        Assert.assertEquals(actualResult2, expectedResult2, "Test Failed! Long Term Sale Listing Package is not found");
 	        System.out.println("✅ Long Term Sale Listing package is Found");
 	        Assert.assertEquals(actualResult3, expectedResult3, "Test Failed! Long Term Sale Listing Package Price is not Matching");
@@ -190,8 +190,8 @@ public class MorePackages extends BaseTest {
 	        
 	        String actualResult1 = knowYour.getText();
 			String actualResult2 = knowYourPrice.getText();
-	        String expectedResult1 = "Our report covers identity check, criminal check, credit check, reference check & more";
-	        String expectedResult2 = "₹ 1,299";
+	        String expectedResult1 = config.getProperty("know.discription");
+	        String expectedResult2 = config.getProperty("know.price");
 	        Assert.assertEquals(actualResult1, expectedResult1, "Test Failed! Know Your Tenant Package is not found");
 	        System.out.println("✅ Know Your Tenant package is Found");
 	        Assert.assertEquals(actualResult2, expectedResult2, "Test Failed! Know Your Tenant Package Price is not Matching");
@@ -199,8 +199,8 @@ public class MorePackages extends BaseTest {
 	        
 	        String actualResult3 = prop.getText();
 			String actualResult4 = propPrice.getText();
-	        String expectedResult3 = "Get a visit by our Property Experts who prepare an accurate & detailed Valuation Report";
-	        String expectedResult4 = "₹ 2,625";
+	        String expectedResult3 = config.getProperty("prop.discription");
+	        String expectedResult4 = config.getProperty("prop.price");
 	        Assert.assertEquals(actualResult3, expectedResult3, "Test Failed! Property Evaluation Package is not found");
 	        System.out.println("✅ Property Evaluation package is Found");
 	        Assert.assertEquals(actualResult4, expectedResult4, "Test Failed! Property Evaluation Price is not Matching");
@@ -208,8 +208,8 @@ public class MorePackages extends BaseTest {
 	        
 	        String actualResult5 = legelService.getText();
 			String actualResult6 = legelServicePrice.getText();
-	        String expectedResult5 = "Speak to an attorney, get your purchase agreement drafted or verified by reputed lawyers";
-	        String expectedResult6 = "₹ 1,500";
+	        String expectedResult5 = config.getProperty("legal.discription");
+	        String expectedResult6 = config.getProperty("legal.price");
 	        Assert.assertEquals(actualResult5, expectedResult5, "Test Failed! Legal Services Package is not found");
 	        System.out.println("✅ Legal Services package is Found");
 	        Assert.assertEquals(actualResult6, expectedResult6, "Test Failed! Legal Services Package Price is not Matching");
@@ -217,8 +217,8 @@ public class MorePackages extends BaseTest {
 	        
 	        String actualResult7 = propertyAstro.getText();
 			String actualResult8 = propertyAstroPrice.getText();
-	        String expectedResult7 = "Let our experts guide you through the best solutions for selling or buying a property";
-	        String expectedResult8 = "₹ 2,100";
+	        String expectedResult7 = config.getProperty("property.discription");
+	        String expectedResult8 = config.getProperty("property.price");
 	        Assert.assertEquals(actualResult7, expectedResult7, "Test Failed! Property Astrology Package is not found");
 	        System.out.println("✅ Property Astrology package is Found");
 	        Assert.assertEquals(actualResult8, expectedResult8, "Test Failed! Property Astrology Package Price is not Matching");
